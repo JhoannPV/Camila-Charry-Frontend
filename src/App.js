@@ -1,12 +1,23 @@
-import NavbarUse from "./components/NavbarUse";
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function App() {
   return (
     <>
-      <NavbarUse />
-      <span className="material-symbols-outlined">search</span>
-      <br />
-      <i className="bi bi-apple"></i>
+      <Header />
+      <div className="contenido">
+        <Row className="container-fluid RowProductoInsumo">
+          <Col className="ColPlantillaProducto">
+            <div className="PlantillaProducto"></div>
+          </Col>
+          <Col className="ColPlantillaInsumo">
+            <div className="PlantillaInsumo"></div>
+          </Col>
+        </Row>
+      </div>
+      <Footer />
     </>
   );
 }

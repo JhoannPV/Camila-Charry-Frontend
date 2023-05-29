@@ -1,0 +1,21 @@
+.header {
+  margin: 0;
+  padding: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#eed5a7, #c5933d);
+  font-family: "Libre Baskerville", serif;
+}
+.name-empresa {
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.name-empresa span {
+  margin-left: 1rem;
+  font-weight: normal;
+}
