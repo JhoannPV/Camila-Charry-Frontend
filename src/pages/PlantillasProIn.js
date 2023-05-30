@@ -1,13 +1,14 @@
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
-import PlantillaProducto from "../components/plantilla_produto/PlantillaProducto";
+/* import Plantillas from "../components/plantillas/Plantillas";
+ */ import Plantillas from "../components/plantillas/Plantillas";
 
 function PlantillasProIn() {
   return (
     <>
       <Header />
       <div className="contenido">
-        <PlantillaProducto />
+        <Plantillas />
       </div>
       <Footer />
     </>

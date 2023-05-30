@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(#eed5a7, #c5933d);
-  font-family: "Libre Baskerville", serif;
+  background-image: linear-gradient(#f0bf64, #be7f10);
+  font-family: "Bruno Ace", cursive;
 }
 .name-empresa {
   margin: 0;

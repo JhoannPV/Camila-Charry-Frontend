@@ -1,0 +1,131 @@
+.RowPlantillaProIns {
+  font-family: "Bruno Ace", cursive;
+}
+.ColPlantillaProducto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0% 2% 4% 0%;
+}
+.PlantillaProducto {
+  width: 451px;
+  height: 22rem;
+  border-radius: 7px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.gestionarPlanProLink {
+  transition: all 0.3s ease;
+  color: black;
+  text-decoration: none;
+  width: 451px;
+  height: 22rem;
+  border-radius: 7px;
+  border: 1px solid rgb(241, 217, 179);
+  background-image: radial-gradient(
+    circle,
+    rgb(235, 142, 3),
+    rgb(201, 139, 45),
+    rgb(207, 153, 71),
+    rgb(207, 153, 71),
+    rgb(214, 172, 109),
+    rgb(212, 188, 152),
+    white,
+    rgb(212, 188, 152),
+    rgb(214, 172, 109),
+    rgb(207, 153, 71),
+    rgb(207, 153, 71),
+    rgb(201, 139, 45),
+    rgb(235, 142, 3)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.gestionarPlanProLink:hover {
+  color: black;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.568);
+}
+.ColPlantillaInsumo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0% 0% 4% 2%;
+}
+.PlantillaInsumo {
+  width: 451px;
+  height: 22rem;
+  border-radius: 7px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+.gestionarPlanInLink {
+  transition: all 0.3s ease;
+  color: black;
+  text-decoration: none;
+  width: 451px;
+  height: 22rem;
+  border: 1px solid rgb(241, 217, 179);
+  border-radius: 7px;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(235, 142, 3),
+    rgb(201, 139, 45),
+    rgb(207, 153, 71),
+    rgb(207, 153, 71),
+    rgb(214, 172, 109),
+    rgb(212, 188, 152),
+    white,
+    rgb(212, 188, 152),
+    rgb(214, 172, 109),
+    rgb(207, 153, 71),
+    rgb(207, 153, 71),
+    rgb(201, 139, 45),
+    rgb(235, 142, 3)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.gestionarPlanInLink:hover {
+  color: black;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.568);
+}
+
+.PlanProInDescrip {
+  font-size: 2rem;
+  text-align: center;
+}
+.cantidadProIn {
+  transition: all 0.5s ease;
+  text-align: center;
+  background-image: linear-gradient(
+    rgb(240, 137, 21),
+    rgb(216, 128, 28),
+    rgb(109, 31, 0)
+  );
+  border-radius: 5px;
+  width: 15rem;
+  height: 3rem;
+  color: rgb(204, 203, 203);
+}
+.cantidadProIn:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.377);
+}
+
+.mensaje-aviso {
+  border: 3px solid rgba(247, 226, 40, 0.418);
+  border-radius: 5px;
+  width: 15rem;
+}
