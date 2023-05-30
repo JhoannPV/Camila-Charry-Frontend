@@ -1,41 +1,4 @@
 .contenido {
   margin-top: 10%;
-  margin-bottom: 10%;
-}
-.RowProductoInsumo {
-  gap: 5%;
-}
-.ColPlantillaProducto {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.ColPlantillaInsumo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.PlantillaProducto {
-  transition: all 0.5s ease;
-  width: 90%;
-  height: 22rem;
-  border: 1px solid rgb(241, 217, 179);
-  border-radius: 7px;
-  background-image: linear-gradient(to right, rgb(230, 144, 17), white);
-}
-.PlantillaProducto:hover {
-  cursor: pointer;
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.521);
-}
-.PlantillaInsumo {
-  transition: all 0.5s ease;
-  width: 90%;
-  height: 22rem;
-  border: 1px solid rgb(241, 217, 179);
-  border-radius: 7px;
-  background-image: linear-gradient(to right, rgb(230, 188, 125), white);
-}
-.PlantillaInsumo:hover {
-  cursor: pointer;
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.521);
+  margin-bottom: 5%;
 }

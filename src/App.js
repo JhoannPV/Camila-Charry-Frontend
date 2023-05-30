@@ -1,23 +1,24 @@
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Login from "./pages/Login";
+import PlantillasProIn from "./pages/PlantillasProIn";
+import PlanProductPage from "./pages/PlanProductPage";
+import PlanInsumPage from "./pages/PlanInsumPage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <div className="contenido">
-        <Row className="container-fluid RowProductoInsumo">
-          <Col className="ColPlantillaProducto">
-            <div className="PlantillaProducto"></div>
-          </Col>
-          <Col className="ColPlantillaInsumo">
-            <div className="PlantillaInsumo"></div>
-          </Col>
-        </Row>
-      </div>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/plantillas" element={<PlantillasProIn />} />
+        <Route
+          path="/gestionar-plantillas-de-productos"
+          element={<PlanProductPage />}
+        />
+        <Route
+          path="/gestionar-plantillas-de-insumos"
+          element={<PlanInsumPage />}
+        />
+      </Routes>
     </>
   );
 }
