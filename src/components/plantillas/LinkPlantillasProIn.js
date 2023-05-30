@@ -8,42 +8,38 @@ function LinkPlantillasProIn() {
   return (
     <>
       <Col className="ColPlantillaProducto">
-        <button className="PlantillaProducto">
-          <Link to={ruta1} className="gestionarPlanProLink">
-            <p className="PlanProInDescrip">
-              <b>
-                Plantillas <br />
-                de <br />
-                Productos
-              </b>
-            </p>
-            <p className="cantidadProIn">
-              Plantillas Registradas:
-              <br />
-              45
-            </p>
-            <p className="mensaje-aviso">Click para gestionar</p>
-          </Link>
-        </button>
+        <Link to={ruta1} className="gestionarPlanProLink">
+          <p className="PlanProInDescrip">
+            <b>
+              Plantillas <br />
+              de <br />
+              Productos
+            </b>
+          </p>
+          <p className="cantidadProIn">
+            Plantillas Registradas:
+            <br />
+            45
+          </p>
+          <p className="mensaje-aviso">Click para gestionar</p>
+        </Link>
       </Col>
       <Col className="ColPlantillaInsumo">
-        <button className="PlantillaInsumo">
-          <Link to={ruta2} className="gestionarPlanInLink">
-            <p className="PlanProInDescrip">
-              <b>
-                Plantillas <br />
-                de <br />
-                Insumos
-              </b>
-            </p>
-            <p className="cantidadProIn">
-              Plantillas Registradas:
-              <br />
-              45
-            </p>
-            <p className="mensaje-aviso">Click para gestionar</p>
-          </Link>
-        </button>
+        <Link to={ruta2} className="gestionarPlanInLink">
+          <p className="PlanProInDescrip">
+            <b>
+              Plantillas <br />
+              de <br />
+              Insumos
+            </b>
+          </p>
+          <p className="cantidadProIn">
+            Plantillas Registradas:
+            <br />
+            45
+          </p>
+          <p className="mensaje-aviso">Click para gestionar</p>
+        </Link>
       </Col>
     </>
   );
