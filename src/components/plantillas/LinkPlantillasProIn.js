@@ -1,10 +1,22 @@
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function LinkPlantillasProIn() {
   let ruta1 = "/gestionar-plantillas-de-productos";
   let ruta2 = "/gestionar-plantillas-de-insumos";
 
+  const [plantillasProductos, setPlantillasProductos] = useState([]);
+  const plantillasProductosCount = plantillasProductos.length;
+  useEffect(() => {
+    const getPlantillasProductos = async () => {
+      const url = "http://localhost:3001/api/v1/plantillas-productos";
+      const result = await axios.get(url);
+      setPlantillasProductos(result.data);
+    };
+    getPlantillasProductos();
+  }, []);
   return (
     <>
       <Col className="ColPlantillaProducto">
@@ -19,7 +31,7 @@ function LinkPlantillasProIn() {
           <p className="cantidadProIn">
             Plantillas Registradas:
             <br />
-            45
+            {plantillasProductosCount}
           </p>
           <p className="mensaje-aviso">Click para gestionar</p>
         </Link>
