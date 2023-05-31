@@ -17,7 +17,17 @@ function LinkPlantillasProIn() {
     };
     getPlantillasProductos();
   }, []);
-  console.log(plantillasProductos);
+
+  const [plantillasInsumos, setPlantillasInsumos] = useState([]);
+  let plantillasInsumosCount = plantillasInsumos.length;
+  useEffect(() => {
+    const getPlantillasInsumos = async () => {
+      const url = "http://localhost:3001/api/v1/plantillas-insumos";
+      const result = await axios.get(url);
+      setPlantillasInsumos(result.data.data);
+    };
+    getPlantillasInsumos();
+  }, []);
   return (
     <>
       <Col className="ColPlantillaProducto">
@@ -49,7 +59,7 @@ function LinkPlantillasProIn() {
           <p className="cantidadProIn">
             Plantillas Registradas:
             <br />
-            45
+            {plantillasInsumosCount}
           </p>
           <p className="mensaje-aviso">Click para gestionar</p>
         </Link>
