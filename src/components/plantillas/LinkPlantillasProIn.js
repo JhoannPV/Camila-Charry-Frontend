@@ -8,15 +8,16 @@ function LinkPlantillasProIn() {
   let ruta2 = "/gestionar-plantillas-de-insumos";
 
   const [plantillasProductos, setPlantillasProductos] = useState([]);
-  const plantillasProductosCount = plantillasProductos.length;
+  let plantillasProductosCount = plantillasProductos.length;
   useEffect(() => {
     const getPlantillasProductos = async () => {
       const url = "http://localhost:3001/api/v1/plantillas-productos";
       const result = await axios.get(url);
-      setPlantillasProductos(result.data);
+      setPlantillasProductos(result.data.data);
     };
     getPlantillasProductos();
   }, []);
+  console.log(plantillasProductos);
   return (
     <>
       <Col className="ColPlantillaProducto">
