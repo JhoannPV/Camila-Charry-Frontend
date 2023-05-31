@@ -1,9 +1,10 @@
 import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 function LinkPlantillasProIn() {
+  const navigate = useNavigate();
   let ruta1 = "/gestionar-plantillas-de-productos";
   let ruta2 = "/gestionar-plantillas-de-insumos";
 
@@ -31,7 +32,10 @@ function LinkPlantillasProIn() {
   return (
     <>
       <Col className="ColPlantillaProducto">
-        <Link to={ruta1} className="gestionarPlanProLink">
+        <button
+          onClick={() => navigate(ruta1)}
+          className="gestionarPlanProLink"
+        >
           <p className="PlanProInDescrip">
             <b>
               Plantillas <br />
@@ -45,10 +49,10 @@ function LinkPlantillasProIn() {
             {plantillasProductosCount}
           </p>
           <p className="mensaje-aviso">Click para gestionar</p>
-        </Link>
+        </button>
       </Col>
       <Col className="ColPlantillaInsumo">
-        <Link to={ruta2} className="gestionarPlanInLink">
+        <button onClick={() => navigate(ruta2)} className="gestionarPlanInLink">
           <p className="PlanProInDescrip">
             <b>
               Plantillas <br />
@@ -62,7 +66,7 @@ function LinkPlantillasProIn() {
             {plantillasInsumosCount}
           </p>
           <p className="mensaje-aviso">Click para gestionar</p>
-        </Link>
+        </button>
       </Col>
     </>
   );
