@@ -1,0 +1,19 @@
+.linkPlantillas {
+  text-decoration: none;
+  color: black;
+}
+.linkPlantillas:hover {
+  color: black;
+}
+.espaciado-login {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5% auto 5% auto;
+}
+.titutlo-login {
+  font-weight: bold;
+  text-align: center;
+  margin: 3% 1% 1% 1%;
+}

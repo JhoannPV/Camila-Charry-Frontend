@@ -1,7 +1,7 @@
-import Login from "./pages/Login";
-import PlantillasProIn from "./pages/PlantillasProIn";
-import PlanProductPage from "./pages/PlanProductPage";
-import PlanInsumPage from "./pages/PlanInsumPage";
+import Login from "./pages/Login/Login";
+import PlantillasProIn from "./pages/PlantillasProIn/PlantillasProIn";
+import PlanProductPage from "./pages/PlanProductPage/PlanProductPage";
+import PlanInsumPage from "./pages/PlanInsumPage/PlanInsumPage";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
