@@ -37,7 +37,7 @@ function LoginForm() {
           }}
         >
           <Form.Group className="mb-3" controlId="formBasicUsername">
-            <Form.Label>Nombre se Usuario</Form.Label>
+            <Form.Label>Nombre de Usuario</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ingrese Nombre de Usuario"
