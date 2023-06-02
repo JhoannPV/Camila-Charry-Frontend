@@ -2,6 +2,7 @@ import Col from "react-bootstrap/Col";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function LinkPlantillasProIn() {
   const navigate = useNavigate();
@@ -17,13 +18,17 @@ function LinkPlantillasProIn() {
       navigate(ruta3);
     } else {
       const getPlantillasProductos = async () => {
-        const url = "http://localhost:3001/api/v1/plantillas-productos";
-        const result = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setPlantillasProductos(result.data.data);
+        try {
+          const url = "http://localhost:3001/api/v1/plantillas-productos";
+          const result = await axios.get(url, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setPlantillasProductos(result.data.data);
+        } catch (error) {
+          toast.error("Fallo:" + error);
+        }
       };
       getPlantillasProductos();
     }
@@ -37,13 +42,17 @@ function LinkPlantillasProIn() {
       navigate(ruta3);
     } else {
       const getPlantillasInsumos = async () => {
-        const url = "http://localhost:3001/api/v1/plantillas-insumos";
-        const result = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setPlantillasInsumos(result.data.data);
+        try {
+          const url = "http://localhost:3001/api/v1/plantillas-insumos";
+          const result = await axios.get(url, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setPlantillasInsumos(result.data.data);
+        } catch (error) {
+          toast.error("Fallo:" + error);
+        }
       };
       getPlantillasInsumos();
     }
@@ -51,6 +60,7 @@ function LinkPlantillasProIn() {
 
   return (
     <>
+      <ToastContainer />
       <Col className="ColPlantillaProducto">
         <button
           onClick={() => navigate(ruta1)}
