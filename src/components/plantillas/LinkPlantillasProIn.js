@@ -5,30 +5,50 @@ import { useState, useEffect } from "react";
 
 function LinkPlantillasProIn() {
   const navigate = useNavigate();
-  let ruta1 = "/gestionar-plantillas-de-productos";
-  let ruta2 = "/gestionar-plantillas-de-insumos";
+  const ruta1 = "/gestionar-plantillas-de-productos";
+  const ruta2 = "/gestionar-plantillas-de-insumos";
+  const ruta3 = "/";
 
   const [plantillasProductos, setPlantillasProductos] = useState([]);
   let plantillasProductosCount = plantillasProductos.length;
   useEffect(() => {
-    const getPlantillasProductos = async () => {
-      const url = "http://localhost:3001/api/v1/plantillas-productos";
-      const result = await axios.get(url);
-      setPlantillasProductos(result.data.data);
-    };
-    getPlantillasProductos();
-  }, []);
+    const token = localStorage.getItem("jwt-token");
+    if (!token) {
+      navigate(ruta3);
+    } else {
+      const getPlantillasProductos = async () => {
+        const url = "http://localhost:3001/api/v1/plantillas-productos";
+        const result = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setPlantillasProductos(result.data.data);
+      };
+      getPlantillasProductos();
+    }
+  }, [navigate]);
 
   const [plantillasInsumos, setPlantillasInsumos] = useState([]);
   let plantillasInsumosCount = plantillasInsumos.length;
   useEffect(() => {
-    const getPlantillasInsumos = async () => {
-      const url = "http://localhost:3001/api/v1/plantillas-insumos";
-      const result = await axios.get(url);
-      setPlantillasInsumos(result.data.data);
-    };
-    getPlantillasInsumos();
-  }, []);
+    const token = localStorage.getItem("jwt-token");
+    if (!token) {
+      navigate(ruta3);
+    } else {
+      const getPlantillasInsumos = async () => {
+        const url = "http://localhost:3001/api/v1/plantillas-insumos";
+        const result = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setPlantillasInsumos(result.data.data);
+      };
+      getPlantillasInsumos();
+    }
+  }, [navigate]);
+
   return (
     <>
       <Col className="ColPlantillaProducto">
