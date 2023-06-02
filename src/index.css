@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Bruno Ace";
+  src: url("./fonts/Bruno_Ace/BrunoAce-Regular.ttf");
+}
+
 * {
-  font-family: "Bruno Ace", cursive;
+  font-family: "Bruno Ace";
 }
