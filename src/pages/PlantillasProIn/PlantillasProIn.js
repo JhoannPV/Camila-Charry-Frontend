@@ -1,3 +1,4 @@
+import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import Plantillas from "../../components/plantillas/Plantillas";
@@ -7,6 +8,7 @@ function PlantillasProIn() {
   return (
     <>
       <Header />
+      <ButtonSignOut />
       <div className="contenido-plantillas">
         <Plantillas />
       </div>
