@@ -23,7 +23,9 @@ function LoginForm() {
       /* console.log(localStorage.getItem("jwt-token")); */
       navigate(rutaPlan);
     } catch (error) {
-      toast.error("Falló: " + error.message);
+      toast.error(
+        "Falló: " + error.message + "\n<<Usuario o contraseña incorrectos>>"
+      );
     }
   };
   return (
