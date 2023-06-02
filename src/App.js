@@ -9,7 +9,6 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/token" />
         <Route path="/plantillas" element={<PlantillasProIn />} />
         <Route
           path="/gestionar-plantillas-de-productos"
