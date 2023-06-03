@@ -21,7 +21,6 @@ function LoginForm() {
       const res = await axios.post(url, credentials);
       const token = res.data.data.token;
       localStorage.setItem("jwt-token", token);
-      /* console.log(localStorage.getItem("jwt-token")); */
       navigate(rutaPlan);
     } catch (error) {
       toast.error(
