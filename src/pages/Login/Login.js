@@ -7,7 +7,7 @@ function Login() {
   return (
     <>
       <Header />
-      <div className="contenido-login">
+      <div>
         <h1 className="titutlo-login">Iniciar sesión</h1>
         <section className="espaciado-login">
           <LoginForm />

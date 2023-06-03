@@ -1,11 +1,11 @@
-.espaciado-login {
+.espaciado-signup {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 2.5% auto 7% auto;
 }
-.titutlo-login {
+.titutlo-signup {
   font-weight: bold;
   text-align: center;
   margin: 3% 1% 1% 1%;

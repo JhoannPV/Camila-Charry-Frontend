@@ -2,12 +2,13 @@ import "./LoginForm.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
 function LoginForm() {
-  let rutaPlan = "/plantillas";
+  let rutaPlan = "/";
+  let rutaSigUp = "/signup";
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +25,7 @@ function LoginForm() {
       navigate(rutaPlan);
     } catch (error) {
       toast.error(
-        "Falló: " + error.message + "\n<<Usuario o contraseña incorrectos>>"
+        "Usuario y/o contraseña incorrectos, o no tiene cuenta de Administrador"
       );
     }
   };
@@ -58,6 +59,12 @@ function LoginForm() {
             <Button variant="primary" type="submit">
               SignIn
             </Button>
+          </div>
+          <div className="signup">
+            <p>¿No tiene cuenta?</p>
+            <Link to={rutaSigUp} className="LinkSignUp">
+              Registrese aquí
+            </Link>
           </div>
         </Form>
       </div>
