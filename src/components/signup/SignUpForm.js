@@ -33,7 +33,7 @@ function SignUpForm() {
       await axios.post(url, newUser);
       toast.success("Usuario registrado");
     } catch (error) {
-      toast.error("Faltan datos");
+      toast.error("Faltan datos, Usuario o Correo ya registrados");
     }
   };
   return (
