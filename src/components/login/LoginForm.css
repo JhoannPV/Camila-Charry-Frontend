@@ -24,3 +24,26 @@
 .LinkSignUp {
   text-decoration: none;
 }
+.password {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.visibility {
+  background-color: rgb(3, 151, 102);
+  cursor: pointer;
+  padding: 0.75% 2% 0.75% 1.5%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.visibility:active {
+  background-color: rgb(27, 180, 129);
+}
+.visibility i {
+  font-size: 1.3rem;
+  color: rgb(240, 238, 238);
+}
+.borderRadius {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

@@ -12,6 +12,7 @@ function LoginForm() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -46,13 +47,26 @@ function LoginForm() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Contraseña</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Contraseña"
-              required
-              name="password"
-              onChange={(ev) => setPassword(ev.target.value)}
-            />
+            <div className="password">
+              <Form.Control
+                type={showPassword ? "text" : "password"}
+                placeholder="Contraseña"
+                required
+                name="password"
+                onChange={(ev) => setPassword(ev.target.value)}
+                className="borderRadius"
+              />
+              <div
+                className="visibility"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? (
+                  <i className="bi bi-eye-fill"></i>
+                ) : (
+                  <i className="bi bi-eye-slash-fill"></i>
+                )}
+              </div>
+            </div>
           </Form.Group>
           <div className="centrar-button">
             <Button variant="primary" type="submit">

@@ -1,7 +1,18 @@
+import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import PlantillasProductos from "../../components/plantillas/PlantillasProductos/PlantillasProductos";
+import "./PlanProductPage.css";
+
 function PlanProductPage() {
   return (
     <>
-      <h1>Plantillas de Productos</h1>
+      <Header />
+      <ButtonSignOut />
+      <div className="plantillas-productos">
+        <PlantillasProductos />
+      </div>
+      <Footer />
     </>
   );
 }
