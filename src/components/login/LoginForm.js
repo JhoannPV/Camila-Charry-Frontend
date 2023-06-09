@@ -22,7 +22,10 @@ function LoginForm() {
       const res = await axios.post(url, credentials);
       const token = res.data.data.token;
       localStorage.setItem("jwt-token", token);
-      navigate(rutaPlan);
+      toast.success("Inicio de sesión correcto");
+      setTimeout(() => {
+        navigate(rutaPlan);
+      }, 1500);
     } catch (error) {
       toast.error(
         "Usuario y/o contraseña incorrectos, o no tiene cuenta de Administrador"
