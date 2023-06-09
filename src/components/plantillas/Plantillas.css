@@ -34,7 +34,7 @@
   justify-content: space-evenly;
 }
 .gestionarPlanProLink:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.568);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
 .ColPlantillaInsumo {
   display: flex;
@@ -72,7 +72,7 @@
   justify-content: space-evenly;
 }
 .gestionarPlanInLink:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.568);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
 
 .PlanProInDescrip {

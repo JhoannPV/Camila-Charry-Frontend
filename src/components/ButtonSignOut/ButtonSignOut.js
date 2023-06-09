@@ -14,7 +14,7 @@ function ButtonSignOut() {
           className="signOutButton"
           onClick={handleSignOut}
         >
-          SignOut
+          <p>SignOut</p>
           <i className="bi bi-power signOutIcon"></i>
         </Button>
       </div>

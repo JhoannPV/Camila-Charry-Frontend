@@ -3,13 +3,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ListaPlantillasInsumos from "./ListaPlantillasInsumos";
 
 function PlantillasInsumos() {
   const navigate = useNavigate();
   const ruta = "/";
-
   const [plantillasInsumos, setPlantillasInsumos] = useState([]);
-  let plantillasInsumosCount = plantillasInsumos.length;
 
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
@@ -35,8 +34,17 @@ function PlantillasInsumos() {
   return (
     <>
       <ToastContainer />
-      <h1>Plantillas de Insumos</h1>
-      <p>{plantillasInsumosCount}</p>
+      <div className="contenido-plaI">
+        <ul className="lista-plantillas-insumos">
+          {plantillasInsumos.map((plantilla) => {
+            return (
+              <>
+                <ListaPlantillasInsumos plantilla={plantilla} />
+              </>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 }

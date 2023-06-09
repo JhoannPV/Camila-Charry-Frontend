@@ -3,13 +3,13 @@ import { ToastContainer, toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ListaPlantillasProductos from "./ListaPlantillasProductos";
 
 function PlantillasProductos() {
   const navigate = useNavigate();
   const ruta = "/";
-
   const [plantillasProductos, setPlantillasProductos] = useState([]);
-  let plantillasProductosCount = plantillasProductos.length;
+
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
     if (!token) {
@@ -34,8 +34,17 @@ function PlantillasProductos() {
   return (
     <>
       <ToastContainer />
-      <h1>Plantillas de Productos</h1>
-      <p>{plantillasProductosCount}</p>
+      <div className="contenido-plaP">
+        <ul className="lista-plantillas-productos">
+          {plantillasProductos.map((plantilla) => {
+            return (
+              <>
+                <ListaPlantillasProductos plantilla={plantilla} />
+              </>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 }

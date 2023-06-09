@@ -1,0 +1,73 @@
+.contenido-plaI {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lista-plantillas-insumos {
+  list-style-type: none;
+  padding-left: 0;
+  width: 55rem;
+}
+.format-plantilla {
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+}
+.opciones {
+  transition: all 0.3s ease;
+  width: 55rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(turquoise, rgb(25, 110, 102));
+  border-radius: 10px;
+}
+.opciones2 {
+  transition: all 0.3s ease;
+  width: 55rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(turquoise, rgb(25, 110, 102));
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.format-plantilla:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+  border-radius: 10px;
+}
+
+.sizeNombrePlantilla {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.visibility2 {
+  font-size: 1.5rem;
+}
+.visibility2:hover {
+  background-image: linear-gradient(turquoise, rgb(25, 110, 102));
+  border: 1px solid rgb(7, 124, 111);
+  border-radius: 5px;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.descriptionPlanIn {
+  background-image: linear-gradient(rgb(46, 46, 46), black);
+  color: rgb(212, 212, 212);
+  text-align: justify;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2%;
+  width: 55rem;
+  font-size: 0.8rem;
+}

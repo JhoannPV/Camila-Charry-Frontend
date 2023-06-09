@@ -7,7 +7,7 @@
   background-image: linear-gradient(silver, rgb(228, 227, 227), white);
 }
 .signUp:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.164);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
 .nombreUsuarioMargin {
   margin-top: 4%;
@@ -27,4 +27,29 @@
 }
 .LinkLogin {
   text-decoration: none;
+}
+
+.password {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.visibility {
+  background-color: rgb(3, 151, 102);
+  cursor: pointer;
+  padding: 0.6% 1.5% 0.6% 1.5%;
+  margin-left: 0.95%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.visibility:active {
+  background-color: rgb(27, 180, 129);
+}
+.visibility i {
+  font-size: 1.3rem;
+  color: rgb(240, 238, 238);
+}
+.borderRadius {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
