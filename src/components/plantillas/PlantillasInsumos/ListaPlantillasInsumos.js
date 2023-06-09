@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-function ListaPlantillasInsumos({ plantilla }) {
+function ListaPlantillasInsumos({
+  plantilla,
+  estado2,
+  setEstado2,
+  estado3,
+  setEstado3,
+}) {
   const [showDescription, setShowDescription] = useState(false);
   return (
     <>
@@ -21,8 +27,14 @@ function ListaPlantillasInsumos({ plantilla }) {
               )}
             </div>
             <i className="bi bi-play-fill visibility2"></i>
-            <i className="bi bi-pen-fill visibility2"></i>
-            <i className="bi bi-trash3-fill visibility2"></i>
+            <i
+              className="bi bi-pen-fill visibility2"
+              onClick={() => setEstado2(!estado2)}
+            ></i>
+            <i
+              className="bi bi-trash3-fill visibility2"
+              onClick={() => setEstado3(!estado3)}
+            ></i>
           </div>
 
           {showDescription ? (
