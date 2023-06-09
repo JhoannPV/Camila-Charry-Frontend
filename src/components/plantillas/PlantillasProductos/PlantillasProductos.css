@@ -71,6 +71,7 @@
   padding: 2%;
   width: 55rem;
   font-size: 0.8rem;
+  word-break: break-all;
 }
 
 .ButtonAgregar {

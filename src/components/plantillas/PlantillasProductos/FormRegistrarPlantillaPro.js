@@ -20,8 +20,11 @@ function FormRegistrarPlantillaPro({ estado1, setEstado1 }) {
           Authorization: `Bearer ${token}`,
         },
       });
-      setEstado1(!estado1);
-      window.location.reload();
+      toast.success("Plantilla Registrada");
+      setTimeout(() => {
+        setEstado1(!estado1);
+        window.location.reload();
+      }, 1500);
     } catch (error) {
       toast.error("Fallo:" + error);
     }
