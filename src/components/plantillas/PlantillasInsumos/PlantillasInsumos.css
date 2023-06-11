@@ -49,6 +49,19 @@
   font-size: 2rem;
   font-weight: bold;
 }
+.cantidadPlantilla {
+  word-break: break-word;
+  max-width: 204.17px;
+  max-height: 6rem;
+  overflow: auto;
+}
+.cantidadPlantilla::-webkit-scrollbar {
+  width: 7px;
+}
+.cantidadPlantilla::-webkit-scrollbar-thumb {
+  background-color: rgb(25, 110, 102);
+  border-radius: 4px;
+}
 
 .visibility2 {
   font-size: 1.5rem;

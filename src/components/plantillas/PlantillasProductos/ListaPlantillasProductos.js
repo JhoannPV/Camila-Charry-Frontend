@@ -17,7 +17,7 @@ function ListaPlantillasProductos({
             <p>
               <b>Productos registrados:</b>
               <br />
-              45
+              <div className="cantidadPlantilla">45</div>
             </p>
             <div onClick={() => setShowDescription(!showDescription)}>
               {showDescription ? (
