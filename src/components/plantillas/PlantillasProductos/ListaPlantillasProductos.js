@@ -13,7 +13,7 @@ function ListaPlantillasProductos({
       <li key={plantilla.id}>
         <div className="format-plantilla">
           <div className={showDescription ? "opciones2" : "opciones"}>
-            <p className="sizeNombrePlantilla">{plantilla.nombre}</p>
+            <p className="nombrePlantilla">{plantilla.nombre}</p>
             <p>
               <b>Productos registrados:</b>
               <br />

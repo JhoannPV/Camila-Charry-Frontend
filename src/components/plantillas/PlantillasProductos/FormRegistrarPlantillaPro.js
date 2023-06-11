@@ -26,7 +26,7 @@ function FormRegistrarPlantillaPro({ estado1, setEstado1 }) {
         window.location.reload();
       }, 1500);
     } catch (error) {
-      toast.error("Fallo:" + error);
+      toast.error("La plantilla que desea agregar ya esta registrada");
     }
   };
   return (
@@ -40,6 +40,7 @@ function FormRegistrarPlantillaPro({ estado1, setEstado1 }) {
             placeholder="Ingresar nombre de la plantilla"
             autoComplete="off"
             name="nombrePlanPro"
+            maxLength="51"
             onChange={(ev) => setNombre(ev.target.value)}
           />
         </Form.Group>
