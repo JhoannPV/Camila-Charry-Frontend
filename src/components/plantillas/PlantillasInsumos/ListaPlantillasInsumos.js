@@ -17,7 +17,7 @@ function ListaPlantillasInsumos({
             <p>
               <b>Insumos registrados:</b>
               <br />
-              <div className="cantidadPlantilla">45</div>
+              <span className="cantidadPlantilla">45</span>
             </p>
             <div onClick={() => setShowDescription(!showDescription)}>
               {showDescription ? (

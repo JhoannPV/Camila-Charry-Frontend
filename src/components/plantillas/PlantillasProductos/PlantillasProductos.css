@@ -94,8 +94,7 @@
 
 .ButtonAgregar {
   transition: all 0.3s ease;
-  margin-left: 3%;
-  margin-bottom: 2%;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
 }
 .ButtonAgregar:hover {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);

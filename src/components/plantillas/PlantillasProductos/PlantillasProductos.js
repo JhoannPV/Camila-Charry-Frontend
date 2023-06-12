@@ -7,14 +7,18 @@ import ListaPlantillasProductos from "./ListaPlantillasProductos";
 import Modal from "../../Modal/Modal";
 import Button from "react-bootstrap/Button";
 import FormRegistrarPlantillaPro from "./FormRegistrarPlantillaPro";
+import ButtonBuscarPlantilla from "../ButtonBuscarPlantilla";
 
 function PlantillasProductos() {
+  const Pro_o_In = "productos/buscarPlanPro";
   const navigate = useNavigate();
   const ruta = "/";
   const [estadoModal1, setEstadoModal1] = useState(false);
   const [estadoModal2, setEstadoModal2] = useState(false);
   const [estadoModal3, setEstadoModal3] = useState(false);
   const [plantillasProductos, setPlantillasProductos] = useState([]);
+  const [plantillasProductos2, setPlantillasProductos2] = useState([]);
+  console.log(plantillasProductos2);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
@@ -60,13 +64,24 @@ function PlantillasProductos() {
         estado={estadoModal3}
         setEstado={setEstadoModal3}
       ></Modal>
-      <Button
-        variant="success"
-        onClick={() => setEstadoModal1(!estadoModal1)}
-        className="ButtonAgregar"
-      >
-        Agregar Plantilla
-      </Button>
+      <div className="crear-buscar-Pla-Pro_o_In">
+        <div className="crear-Pla-Pro_o_In">
+          <Button
+            variant="success"
+            onClick={() => setEstadoModal1(!estadoModal1)}
+            className="ButtonAgregar"
+          >
+            Agregar Plantilla
+          </Button>
+        </div>
+        <div className="buscar-Pla-Pro_o_In">
+          <ButtonBuscarPlantilla
+            Pro_o_In={Pro_o_In}
+            setPlantillas={setPlantillasProductos2}
+          />
+        </div>
+        <div className="espaciado"></div>
+      </div>
       <div className="contenido-plaP">
         <ul className="lista-plantillas-productos">
           {plantillasProductos.map((plantilla) => {
