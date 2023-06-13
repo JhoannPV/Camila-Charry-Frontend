@@ -8,6 +8,7 @@ function OnePlantillaInsumo({
   estado3,
   setEstado3,
   setShowPlantillas,
+  setDeletePlantilla,
 }) {
   const [showDescription, setShowDescription] = useState(false);
   return (
@@ -35,7 +36,10 @@ function OnePlantillaInsumo({
             ></i>
             <i
               className="bi bi-trash3-fill visibility2"
-              onClick={() => setEstado3(!estado3)}
+              onClick={() => {
+                setEstado3(!estado3);
+                setDeletePlantilla(plantilla.nombre);
+              }}
             ></i>
           </div>
 

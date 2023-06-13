@@ -9,9 +9,11 @@ import Modal from "../../Modal/Modal";
 import Button from "react-bootstrap/Button";
 import FormRegistrarPlantillaPro from "./FormRegistrarPlantillaPro";
 import ButtonBuscarPlantilla from "../ButtonBuscarPlantilla";
+import OpcionesDeletePlantilla from "../OpcionesDeletePlantilla";
 
 function PlantillasProductos() {
   const Pro_o_In = "productos/buscarPlanPro";
+  const Pro_o_In2 = "productos/eliminarPlanPro";
   const navigate = useNavigate();
   const ruta = "/";
   const [estadoModal1, setEstadoModal1] = useState(false);
@@ -20,7 +22,7 @@ function PlantillasProductos() {
   const [plantillasProductos, setPlantillasProductos] = useState([]);
   const [plantillasProductos2, setPlantillasProductos2] = useState([]);
   const [showPlantillas, setShowPlantillas] = useState(false);
-  console.log(plantillasProductos2);
+  const [deletePlantilla, setDeletePlantilla] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
@@ -62,10 +64,16 @@ function PlantillasProductos() {
         setEstado={setEstadoModal2}
       ></Modal>
       <Modal
-        mensaje="Eliminar"
+        mensaje="Eliminar Plantilla"
         estado={estadoModal3}
         setEstado={setEstadoModal3}
-      ></Modal>
+      >
+        <OpcionesDeletePlantilla
+          Pro_o_In={Pro_o_In2}
+          setEstadoModal3={setEstadoModal3}
+          deletePlantilla={deletePlantilla}
+        />
+      </Modal>
       <div className="crear-buscar-Pla-Pro_o_In">
         <div className="crear-Pla-Pro_o_In">
           <Button
@@ -94,6 +102,7 @@ function PlantillasProductos() {
             estado3={estadoModal3}
             setEstado3={setEstadoModal3}
             setShowPlantillas={setShowPlantillas}
+            setDeletePlantilla={setDeletePlantilla}
           />
         </div>
       ) : (
@@ -108,6 +117,7 @@ function PlantillasProductos() {
                     setEstado2={setEstadoModal2}
                     estado3={estadoModal3}
                     setEstado3={setEstadoModal3}
+                    setDeletePlantilla={setDeletePlantilla}
                   />
                 </>
               );

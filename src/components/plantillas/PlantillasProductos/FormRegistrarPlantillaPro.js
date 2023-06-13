@@ -60,7 +60,11 @@ function FormRegistrarPlantillaPro({ estado1, setEstado1 }) {
           />
         </Form.Group>
         <div className="centrar-button">
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            type="submit"
+            className="registrarPlantillaSombreado"
+          >
             Agregar
           </Button>
         </div>

@@ -6,6 +6,7 @@ function ListaPlantillasInsumos({
   setEstado2,
   estado3,
   setEstado3,
+  setDeletePlantilla,
 }) {
   const [showDescription, setShowDescription] = useState(false);
   return (
@@ -33,7 +34,10 @@ function ListaPlantillasInsumos({
             ></i>
             <i
               className="bi bi-trash3-fill visibility2"
-              onClick={() => setEstado3(!estado3)}
+              onClick={() => {
+                setEstado3(!estado3);
+                setDeletePlantilla(plantilla.nombre);
+              }}
             ></i>
           </div>
 

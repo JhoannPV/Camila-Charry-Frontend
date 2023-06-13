@@ -102,14 +102,8 @@
   width: 15rem;
   text-align: center;
 }
-.ButtonAgregar {
-  transition: all 0.3s ease;
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
-}
-.ButtonAgregar:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
-}
 
+/* Buscar Plantilla */
 .widthButtonBuscarPlantilla {
   width: 30rem;
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
@@ -130,6 +124,7 @@
   border-bottom-left-radius: 0px;
 }
 
+/* div de crear y buscar plantilla */
 .crear-buscar-Pla-Pro_o_In {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -153,4 +148,21 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+/* Eliminar Plantilla */
+.DeletePlantilla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.opcionesDelete {
+  gap: 1.5rem;
+}
+.opcionesDeleteSombreado {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+}
+.opcionesDeleteSombreado:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
