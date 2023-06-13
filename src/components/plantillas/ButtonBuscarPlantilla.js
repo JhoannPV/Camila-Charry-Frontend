@@ -4,13 +4,13 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
-function ButtonBuscarPlantilla({ Pro_o_In, setPlantillas }) {
+function ButtonBuscarPlantilla({ Pro_o_In, setPlantillas, setShowPlantillas }) {
   const [nombre, setNombre] = useState([]);
 
   const token = localStorage.getItem("jwt-token");
   let data = { nombre };
 
-  const hadleClick = async () => {
+  const handleClick = async () => {
     try {
       const url = `http://localhost:3001/api/v1/plantillas-${Pro_o_In}`;
       const res = await axios.post(url, data, {
@@ -19,8 +19,12 @@ function ButtonBuscarPlantilla({ Pro_o_In, setPlantillas }) {
         },
       });
       setPlantillas(res.data.data);
+      setShowPlantillas(true);
+      if (res.data.data === null) {
+        toast.error("Plantilla no encontrada");
+      }
     } catch (error) {
-      toast.error("Plantilla no Encontrada");
+      toast.error("Fallo: " + error);
     }
   };
   return (
@@ -39,7 +43,7 @@ function ButtonBuscarPlantilla({ Pro_o_In, setPlantillas }) {
           <Button
             variant="primary"
             id="button-buscar-plantilla"
-            onClick={() => hadleClick()}
+            onClick={() => handleClick()}
             className="borderRadiusButtonBusqueda"
           >
             Buscar

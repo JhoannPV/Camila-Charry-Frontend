@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ListaPlantillasInsumos from "./ListaPlantillasInsumos";
+import OnePlantillaInsumo from "./OnePlantillaInsumo";
 import Modal from "../../Modal/Modal";
 import Button from "react-bootstrap/Button";
 import FormRegistrarPlantillaIn from "./FormRegistrarPlantillaIn";
@@ -18,6 +19,7 @@ function PlantillasInsumos() {
   const [estadoModal3, setEstadoModal3] = useState(false);
   const [plantillasInsumos, setPlantillasInsumos] = useState([]);
   const [plantillasInsumos2, setPlantillasInsumos2] = useState([]);
+  const [showPlantillas, setShowPlantillas] = useState(false);
   console.log(plantillasInsumos2);
 
   useEffect(() => {
@@ -78,27 +80,41 @@ function PlantillasInsumos() {
           <ButtonBuscarPlantilla
             Pro_o_In={Pro_o_In}
             setPlantillas={setPlantillasInsumos2}
+            setShowPlantillas={setShowPlantillas}
           />
         </div>
         <div className="espaciado"></div>
       </div>
-      <div className="contenido-plaI">
-        <ul className="lista-plantillas-insumos">
-          {plantillasInsumos.map((plantilla) => {
-            return (
-              <>
-                <ListaPlantillasInsumos
-                  plantilla={plantilla}
-                  estado2={estadoModal2}
-                  setEstado2={setEstadoModal2}
-                  estado3={estadoModal3}
-                  setEstado3={setEstadoModal3}
-                />
-              </>
-            );
-          })}
-        </ul>
-      </div>
+      {showPlantillas === true && plantillasInsumos2 ? (
+        <div className="contenido-plaI">
+          <OnePlantillaInsumo
+            plantilla={plantillasInsumos2}
+            estado2={estadoModal2}
+            setEstado2={setEstadoModal2}
+            estado3={estadoModal3}
+            setEstado3={setEstadoModal3}
+            setShowPlantillas={setShowPlantillas}
+          />
+        </div>
+      ) : (
+        <div className="contenido-plaI">
+          <ul className="lista-plantillas-insumos">
+            {plantillasInsumos.map((plantilla) => {
+              return (
+                <>
+                  <ListaPlantillasInsumos
+                    plantilla={plantilla}
+                    estado2={estadoModal2}
+                    setEstado2={setEstadoModal2}
+                    estado3={estadoModal3}
+                    setEstado3={setEstadoModal3}
+                  />
+                </>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </>
   );
 }

@@ -88,3 +88,25 @@
   font-size: 0.8rem;
   word-break: break-word;
 }
+
+.ButtonAgregar {
+  transition: all 0.3s ease;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+}
+.ButtonAgregar:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+}
+
+.format-mas-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mostrarAllPlantillas {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+}
+.mostrarAllPlantillas:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+}

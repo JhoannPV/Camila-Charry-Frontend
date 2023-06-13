@@ -15,18 +15,22 @@ function FormRegistrarPlantillaPro({ estado1, setEstado1 }) {
     try {
       const token = localStorage.getItem("jwt-token");
       const url = "http://localhost:3001/api/v1/plantillas-productos";
-      await axios.post(url, datos, {
+      const res = await axios.post(url, datos, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      toast.success("Plantilla Registrada");
-      setTimeout(() => {
-        setEstado1(!estado1);
-        window.location.reload();
-      }, 1500);
+      if (res.data.data === null) {
+        toast.error("La plantilla que desea agregar ya esta registrada");
+      } else {
+        toast.success("Plantilla Registrada");
+        setTimeout(() => {
+          setEstado1(!estado1);
+          window.location.reload();
+        }, 1500);
+      }
     } catch (error) {
-      toast.error("La plantilla que desea agregar ya esta registrada");
+      toast.error("Fallo: " + error);
     }
   };
   return (

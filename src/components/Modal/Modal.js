@@ -11,7 +11,7 @@ function Modal({ mensaje, estado, setEstado, children }) {
               <h3>{mensaje}</h3>
             </EncabezadoModal>
             <BotonCerrar onClick={() => setEstado(!estado)}>
-              <i class="bi bi-x-lg"></i>
+              <i className="bi bi-x-lg"></i>
             </BotonCerrar>
             {children}
           </ContenedorModal>
