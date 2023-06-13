@@ -95,15 +95,33 @@ function PlantillasProductos() {
       </div>
       {showPlantillas === true && plantillasProductos2 ? (
         <div className="contenido-plaP">
-          <OnePlantillaProducto
-            plantilla={plantillasProductos2}
-            estado2={estadoModal2}
-            setEstado2={setEstadoModal2}
-            estado3={estadoModal3}
-            setEstado3={setEstadoModal3}
-            setShowPlantillas={setShowPlantillas}
-            setDeletePlantilla={setDeletePlantilla}
-          />
+          <div className="format-mas-button">
+            <div>
+              <Button
+                variant="danger"
+                className="mostrarAllPlantillas"
+                onClick={() => setShowPlantillas(false)}
+              >
+                Mostrar todas las Plantillas
+              </Button>
+            </div>
+            <ul className="lista-plantillas-insumos">
+              {plantillasProductos2.map((plantilla) => {
+                return (
+                  <>
+                    <OnePlantillaProducto
+                      plantilla={plantilla}
+                      estado2={estadoModal2}
+                      setEstado2={setEstadoModal2}
+                      estado3={estadoModal3}
+                      setEstado3={setEstadoModal3}
+                      setDeletePlantilla={setDeletePlantilla}
+                    />
+                  </>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       ) : (
         <div className="contenido-plaP">

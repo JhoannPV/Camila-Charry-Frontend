@@ -12,16 +12,20 @@ function ButtonBuscarPlantilla({ Pro_o_In, setPlantillas, setShowPlantillas }) {
 
   const handleClick = async () => {
     try {
-      const url = `http://localhost:3001/api/v1/plantillas-${Pro_o_In}`;
-      const res = await axios.post(url, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setPlantillas(res.data.data);
-      setShowPlantillas(true);
-      if (res.data.data === null) {
-        toast.error("Plantilla no encontrada");
+      let data2 = data;
+      if (data2.nombre.length !== 0) {
+        const url = `http://localhost:3001/api/v1/plantillas-${Pro_o_In}`;
+        const res = await axios.post(url, data2, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (res.data.data === null) {
+          toast.error("Plantilla no encontrada");
+        } else {
+          setPlantillas(res.data.data);
+          setShowPlantillas(true);
+        }
       }
     } catch (error) {
       toast.error("Fallo: " + error);

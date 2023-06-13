@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "react-bootstrap/esm/Button";
 
 function OnePlantillaInsumo({
   plantilla,
@@ -7,13 +6,12 @@ function OnePlantillaInsumo({
   setEstado2,
   estado3,
   setEstado3,
-  setShowPlantillas,
   setDeletePlantilla,
 }) {
   const [showDescription, setShowDescription] = useState(false);
   return (
     <>
-      <div className="format-mas-button">
+      <li key={plantilla.id}>
         <div className="format-plantilla">
           <div className={showDescription ? "opciones2" : "opciones"}>
             <p className="nombrePlantilla">{plantilla.nombre}</p>
@@ -49,16 +47,7 @@ function OnePlantillaInsumo({
             <div></div>
           )}
         </div>
-        <div>
-          <Button
-            variant="danger"
-            className="mostrarAllPlantillas"
-            onClick={() => setShowPlantillas(false)}
-          >
-            Mostrar todas las Plantillas
-          </Button>
-        </div>
-      </div>
+      </li>
     </>
   );
 }
