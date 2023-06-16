@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ListaPlantillasProductos from "./ListaPlantillasProductos";
-import OnePlantillaProducto from "./OnePlantillaProducto";
 import Modal from "../../Modal/Modal";
 import Button from "react-bootstrap/Button";
 import FormRegistrarPlantillaPro from "./FormRegistrarPlantillaPro";
 import ButtonBuscarPlantilla from "../ButtonBuscarPlantilla";
 import OpcionesDeletePlantilla from "../OpcionesDeletePlantilla";
+import EditarPlantilla from "../EditarPlantilla";
 
 function PlantillasProductos() {
   const Pro_o_In = "productos/buscarPlanPro";
@@ -23,6 +23,8 @@ function PlantillasProductos() {
   const [plantillasProductos2, setPlantillasProductos2] = useState([]);
   const [showPlantillas, setShowPlantillas] = useState(false);
   const [deletePlantilla, setDeletePlantilla] = useState([]);
+  const [updatePlantilla, setUpdatePlantilla] = useState([]);
+  const Pro_o_In3 = `productos/${updatePlantilla.id}`;
 
   useEffect(() => {
     const token = localStorage.getItem("jwt-token");
@@ -59,10 +61,17 @@ function PlantillasProductos() {
         />
       </Modal>
       <Modal
-        mensaje="Editar"
+        mensaje="Editar Plantilla"
         estado={estadoModal2}
         setEstado={setEstadoModal2}
-      ></Modal>
+      >
+        <EditarPlantilla
+          Pro_o_In={Pro_o_In3}
+          estado2={estadoModal2}
+          setEstado2={setEstadoModal2}
+          plantillaSearch={updatePlantilla}
+        />
+      </Modal>
       <Modal
         mensaje="Eliminar Plantilla"
         estado={estadoModal3}
@@ -109,13 +118,14 @@ function PlantillasProductos() {
               {plantillasProductos2.map((plantilla) => {
                 return (
                   <>
-                    <OnePlantillaProducto
+                    <ListaPlantillasProductos
                       plantilla={plantilla}
                       estado2={estadoModal2}
                       setEstado2={setEstadoModal2}
                       estado3={estadoModal3}
                       setEstado3={setEstadoModal3}
                       setDeletePlantilla={setDeletePlantilla}
+                      setUpdatePlantilla={setUpdatePlantilla}
                     />
                   </>
                 );
@@ -136,6 +146,7 @@ function PlantillasProductos() {
                     estado3={estadoModal3}
                     setEstado3={setEstadoModal3}
                     setDeletePlantilla={setDeletePlantilla}
+                    setUpdatePlantilla={setUpdatePlantilla}
                   />
                 </>
               );
