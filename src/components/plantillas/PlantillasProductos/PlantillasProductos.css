@@ -114,3 +114,42 @@
 .mostrarAllPlantillas:hover {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
+
+.crud {
+  width: 15rem;
+  max-width: 15rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 570px) {
+  .format-plantilla {
+    max-width: 20rem;
+  }
+  .opciones {
+    max-width: 20rem;
+    min-height: 10rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .opciones2 {
+    max-width: 20rem;
+    min-height: 10rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .descriptionPlanPro {
+    text-align: justify;
+    width: 20rem;
+  }
+  .nombrePlantilla {
+    word-break: break-word;
+    width: 17rem;
+  }
+}

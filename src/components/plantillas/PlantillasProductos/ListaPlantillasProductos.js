@@ -21,28 +21,30 @@ function ListaPlantillasProductos({
               <br />
               <span className="cantidadPlantilla">45</span>
             </p>
-            <div onClick={() => setShowDescription(!showDescription)}>
-              {showDescription ? (
-                <i className="bi bi-eye-fill visibility2"></i>
-              ) : (
-                <i className="bi bi-eye visibility2"></i>
-              )}
+            <div className="crud">
+              <div onClick={() => setShowDescription(!showDescription)}>
+                {showDescription ? (
+                  <i className="bi bi-eye-fill visibility2"></i>
+                ) : (
+                  <i className="bi bi-eye visibility2"></i>
+                )}
+              </div>
+              <i className="bi bi-plus-circle-fill visibility2"></i>
+              <i
+                className="bi bi-pen-fill visibility2"
+                onClick={() => {
+                  setEstado2(!estado2);
+                  setUpdatePlantilla(plantilla);
+                }}
+              ></i>
+              <i
+                className="bi bi-trash3-fill visibility2"
+                onClick={() => {
+                  setEstado3(!estado3);
+                  setDeletePlantilla(plantilla.nombre);
+                }}
+              ></i>
             </div>
-            <i className="bi bi-plus-circle-fill visibility2"></i>
-            <i
-              className="bi bi-pen-fill visibility2"
-              onClick={() => {
-                setEstado2(!estado2);
-                setUpdatePlantilla(plantilla);
-              }}
-            ></i>
-            <i
-              className="bi bi-trash3-fill visibility2"
-              onClick={() => {
-                setEstado3(!estado3);
-                setDeletePlantilla(plantilla.nombre);
-              }}
-            ></i>
           </div>
 
           {showDescription ? (

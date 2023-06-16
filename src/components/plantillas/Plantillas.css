@@ -184,4 +184,21 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 5%;
+  word-break: break-word;
+}
+
+@media (max-width: 570px) {
+  .crear-buscar-Pla-Pro_o_In {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "crear-Pla-Pro_o_In"
+      "buscar-Pla-Pro_o_In";
+    padding: 2% 0% 2% 0%;
+    gap: 1.5rem;
+  }
+  .widthButtonBuscarPlantilla {
+    width: 20rem;
+  }
 }
