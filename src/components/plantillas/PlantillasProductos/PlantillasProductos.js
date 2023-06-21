@@ -11,7 +11,7 @@ import ButtonBuscarPlantilla from "../ButtonBuscarPlantilla";
 import OpcionesDeletePlantilla from "../OpcionesDeletePlantilla";
 import EditarPlantilla from "../EditarPlantilla";
 
-function PlantillasProductos() {
+function PlantillasProductos({ setPlanProducto }) {
   const Pro_o_In = "productos/buscarPlanPro";
   const Pro_o_In2 = "productos/eliminarPlanPro";
   const navigate = useNavigate();
@@ -126,6 +126,7 @@ function PlantillasProductos() {
                       setEstado3={setEstadoModal3}
                       setDeletePlantilla={setDeletePlantilla}
                       setUpdatePlantilla={setUpdatePlantilla}
+                      setPlanProducto={setPlanProducto}
                     />
                   </>
                 );
@@ -147,6 +148,7 @@ function PlantillasProductos() {
                     setEstado3={setEstadoModal3}
                     setDeletePlantilla={setDeletePlantilla}
                     setUpdatePlantilla={setUpdatePlantilla}
+                    setPlanProducto={setPlanProducto}
                   />
                 </>
               );

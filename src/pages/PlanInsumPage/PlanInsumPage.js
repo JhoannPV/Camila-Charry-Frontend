@@ -3,7 +3,7 @@ import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
 import PlantillasInsumos from "../../components/plantillas/PlantillasInsumos/PlantillasInsumos";
 
-function PlanInsumPage() {
+function PlanInsumPage({ setPlantillaInsumo }) {
   return (
     <>
       <Header />
@@ -17,7 +17,7 @@ function PlanInsumPage() {
         <div className="espaciado"></div>
       </div>
       <div className="plantillas-insumos">
-        <PlantillasInsumos />
+        <PlantillasInsumos setPlanInsumo={setPlantillaInsumo} />
       </div>
     </>
   );

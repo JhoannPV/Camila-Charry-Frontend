@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ListaPlantillasProductos({
   plantilla,
@@ -8,7 +9,9 @@ function ListaPlantillasProductos({
   setEstado3,
   setDeletePlantilla,
   setUpdatePlantilla,
+  setPlanProducto,
 }) {
+  const navigate = useNavigate();
   const [showDescription, setShowDescription] = useState(false);
   return (
     <>
@@ -29,7 +32,14 @@ function ListaPlantillasProductos({
                   <i className="bi bi-eye visibility2"></i>
                 )}
               </div>
-              <i className="bi bi-plus-circle-fill visibility2"></i>
+              <i
+                className="bi bi-plus-circle-fill visibility2"
+                onClick={() => {
+                  setPlanProducto(plantilla);
+                  const ruta = `/gestionar-productos/${plantilla.nombre}`;
+                  navigate(ruta);
+                }}
+              ></i>
               <i
                 className="bi bi-pen-fill visibility2"
                 onClick={() => {

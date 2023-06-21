@@ -1,9 +1,8 @@
+import "./ProductoPage.css";
 import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
-import PlantillasProductos from "../../components/plantillas/PlantillasProductos/PlantillasProductos";
-import "./PlanProductPage.css";
 
-function PlanProductPage({ setPlantillaProducto }) {
+function ProductoPage({ plantillaProducto }) {
   return (
     <>
       <Header />
@@ -12,15 +11,13 @@ function PlanProductPage({ setPlantillaProducto }) {
           <ButtonSignOut />
         </div>
         <div className="titulo">
-          <h1>Plantillas de Productos</h1>
+          <h1>{plantillaProducto.nombre}</h1>
         </div>
         <div className="espaciado"></div>
       </div>
-      <div className="plantillas-productos">
-        <PlantillasProductos setPlanProducto={setPlantillaProducto} />
-      </div>
+      <div className="productos"></div>
     </>
   );
 }
 
-export default PlanProductPage;
+export default ProductoPage;
