@@ -1,8 +1,10 @@
 import "./InsumoPage.css";
 import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
+import BackButton from "../../components/BackButton/BackButton";
 
 function InsumoPage({ plantillaInsumo }) {
+  const ruta = "/gestionar-plantillas-de-insumos";
   return (
     <>
       <Header />
@@ -15,6 +17,7 @@ function InsumoPage({ plantillaInsumo }) {
         </div>
         <div className="espaciado"></div>
       </div>
+      <BackButton ruta={ruta} />
       <div className="insumos"></div>
     </>
   );

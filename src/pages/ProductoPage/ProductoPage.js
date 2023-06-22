@@ -1,8 +1,10 @@
 import "./ProductoPage.css";
 import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
+import BackButton from "../../components/BackButton/BackButton";
 
 function ProductoPage({ plantillaProducto }) {
+  const ruta = "/gestionar-plantillas-de-productos";
   return (
     <>
       <Header />
@@ -15,6 +17,7 @@ function ProductoPage({ plantillaProducto }) {
         </div>
         <div className="espaciado"></div>
       </div>
+      <BackButton ruta={ruta} />
       <div className="productos"></div>
     </>
   );
