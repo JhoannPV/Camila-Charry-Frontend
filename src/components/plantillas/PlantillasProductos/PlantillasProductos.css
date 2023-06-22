@@ -68,6 +68,7 @@
 
 .visibility2 {
   font-size: 1.5rem;
+  cursor: pointer;
 }
 .visibility2:hover {
   background-image: linear-gradient(turquoise, rgb(25, 110, 102));
