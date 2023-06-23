@@ -2,7 +2,7 @@
   transition: all 0.2s ease;
   border: none;
   background-image: linear-gradient(
-    rgb(168, 241, 217),
+    rgb(103, 214, 252),
     rgb(12, 194, 255),
     rgb(12, 164, 214),
     rgb(8, 121, 158),
@@ -12,6 +12,11 @@
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.123);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .backButton:hover {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.473);
