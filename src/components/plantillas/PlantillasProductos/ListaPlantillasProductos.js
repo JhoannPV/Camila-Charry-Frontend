@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function ListaPlantillasProductos({
   plantilla,
@@ -13,6 +14,26 @@ function ListaPlantillasProductos({
 }) {
   const navigate = useNavigate();
   const [showDescription, setShowDescription] = useState(false);
+
+  const [productos, setProductos] = useState([]);
+  const productosLength = productos.length;
+  const token = localStorage.getItem("jwt-token");
+  const plantillaProId = plantilla.id;
+  let data = { plantillaProId };
+  try {
+    const getProductos = async () => {
+      const url = "http://localhost:3001/api/v1/productos/forPlanPro";
+      const result = await axios.post(url, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setProductos(result.data.data);
+    };
+    getProductos();
+  } catch (error) {
+    console.log(error);
+  }
   return (
     <>
       <li key={plantilla.id}>
@@ -22,7 +43,7 @@ function ListaPlantillasProductos({
             <p>
               <b>Productos registrados:</b>
               <br />
-              <span className="cantidadPlantilla">45</span>
+              <span className="cantidadPlantilla">{productosLength}</span>
             </p>
             <div className="crud">
               <div onClick={() => setShowDescription(!showDescription)}>

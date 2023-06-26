@@ -3,43 +3,45 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
+import "./ProIn.css";
 
-function OpcionesDeletePlantilla({
+function OpcionesDeleteProIn({
   Pro_o_In,
   setEstadoModal3,
-  deletePlantilla,
+  deleteProIn,
   ProIn,
+  PlantillaProIn,
 }) {
-  const nombre = deletePlantilla;
+  const nombre = deleteProIn;
 
   const token = localStorage.getItem("jwt-token");
-  let data = { nombre };
+  let data = { nombre, PlantillaProIn };
 
   const handleclick = async () => {
     try {
-      const url = `http://localhost:3001/api/v1/plantillas-${Pro_o_In}`;
+      const url = `http://localhost:3001/api/v1/${Pro_o_In}`;
       const res = await axios.post(url, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       if (res.data.data === null) {
-        toast.error("Plantilla no encontrada");
+        toast.error(`${ProIn} no encontrado`);
       } else {
-        toast.success("Plantilla Eliminada");
+        toast.success(`${ProIn} Eliminado`);
         setTimeout(() => {
           setEstadoModal3(false);
           window.location.reload();
         }, 1000);
       }
     } catch (error) {
-      toast.error(`La plantilla que desea eliminar tiene ${ProIn} registrados`);
+      toast.error("Fallo: " + error);
     }
   };
   return (
     <>
       <ToastContainer />
-      <div className="DeletePlantilla">
+      <div className="DeleteProIn">
         <p>¿Desea eliminar esta Plantilla?</p>
         <Row className="opcionesDelete">
           <Col>
@@ -66,4 +68,4 @@ function OpcionesDeletePlantilla({
   );
 }
 
-export default OpcionesDeletePlantilla;
+export default OpcionesDeleteProIn;

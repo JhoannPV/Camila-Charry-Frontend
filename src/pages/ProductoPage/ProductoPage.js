@@ -2,8 +2,11 @@ import "./ProductoPage.css";
 import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
 import BackButton from "../../components/BackButton/BackButton";
+import Productos from "../../components/productos e insumos/productos/Productos";
 
-function ProductoPage({ plantillaProducto }) {
+function ProductoPage() {
+  const plantillaPro = localStorage.getItem("plantillaProducto");
+  const plantillaProducto = JSON.parse(plantillaPro);
   const ruta = "/gestionar-plantillas-de-productos";
   return (
     <>
@@ -18,7 +21,9 @@ function ProductoPage({ plantillaProducto }) {
         <div className="espaciado"></div>
       </div>
       <BackButton ruta={ruta} />
-      <div className="productos"></div>
+      <div className="productos">
+        <Productos plantillaProducto={plantillaProducto} />
+      </div>
     </>
   );
 }

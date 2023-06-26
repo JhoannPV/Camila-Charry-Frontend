@@ -11,6 +11,18 @@ import { useState } from "react";
 function App() {
   const [plantillaProducto, setPlantillaProducto] = useState([]);
   const [plantillaInsumo, setPlantillaInsumo] = useState([]);
+  const validacionProducto = plantillaProducto.length;
+  const validacionInsumo = plantillaInsumo.length;
+
+  if (validacionProducto !== 0) {
+    localStorage.setItem(
+      "plantillaProducto",
+      JSON.stringify(plantillaProducto)
+    );
+  }
+  if (validacionInsumo !== 0) {
+    localStorage.setItem("plantillaInsumo", JSON.stringify(plantillaInsumo));
+  }
   return (
     <>
       <Routes>
@@ -29,12 +41,9 @@ function App() {
         />
         <Route
           path="/gestionar-productos/:producto"
-          element={<ProductoPage plantillaProducto={plantillaProducto} />}
+          element={<ProductoPage />}
         />
-        <Route
-          path="/gestionar-insumos/:insumo"
-          element={<InsumoPage plantillaInsumo={plantillaInsumo} />}
-        />
+        <Route path="/gestionar-insumos/:insumo" element={<InsumoPage />} />
       </Routes>
     </>
   );

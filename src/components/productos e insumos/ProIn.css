@@ -1,0 +1,99 @@
+/* Buscar Plantilla */
+.widthButtonBuscarProIn {
+  width: 30rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+  border-radius: 5px;
+}
+
+.buttonBusqueda {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.borderRadiusBusqueda {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.borderRadiusButtonBusqueda {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* div de crear y buscar plantilla */
+.crear-buscar-Pro_o_In {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "crear-Pro_o_In buscar-Pro_o_In espaciado";
+  padding: 2% 0% 2% 0%;
+}
+.crear-Pro_o_In {
+  grid-area: crear-Pro_o_In;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.buscar-Pro_o_In {
+  grid-area: buscar-Pro_o_In;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.espaciado {
+  grid-area: espaciado;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Eliminar Plantilla */
+.DeleteProIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.opcionesDelete {
+  gap: 1.5rem;
+}
+.opcionesDeleteSombreado {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+}
+.opcionesDeleteSombreado:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+}
+
+/* Editar */
+.centrar-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registrarProInSombreado {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
+}
+.registrarProInSombreado:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+}
+
+.editarProInTitle {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5%;
+  word-break: break-word;
+}
+
+@media (max-width: 570px) {
+  .crear-buscar-Pro_o_In {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "crear-Pro_o_In"
+      "buscar-Pro_o_In";
+    padding: 2% 0% 2% 0%;
+    gap: 1.5rem;
+  }
+  .widthButtonBuscarProIn {
+    width: 20rem;
+  }
+}

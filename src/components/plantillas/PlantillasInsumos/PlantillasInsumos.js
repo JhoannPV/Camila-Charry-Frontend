@@ -54,6 +54,7 @@ function PlantillasInsumos({ setPlanInsumo }) {
         mensaje="Registrar Plantilla de Insumo"
         estado={estadoModal1}
         setEstado={setEstadoModal1}
+        alingnItems="flex-start"
       >
         <FormRegistrarPlantillaIn
           estado1={estadoModal1}
@@ -64,6 +65,7 @@ function PlantillasInsumos({ setPlanInsumo }) {
         mensaje="Editar Plantilla"
         estado={estadoModal2}
         setEstado={setEstadoModal2}
+        alingnItems="flex-start"
       >
         <EditarPlantilla
           Pro_o_In={Pro_o_In3}
@@ -76,11 +78,13 @@ function PlantillasInsumos({ setPlanInsumo }) {
         mensaje="Eliminar Plantilla"
         estado={estadoModal3}
         setEstado={setEstadoModal3}
+        alingnItems="center"
       >
         <OpcionesDeletePlantilla
           Pro_o_In={Pro_o_In2}
           setEstadoModal3={setEstadoModal3}
           deletePlantilla={deletePlantilla}
+          ProIn="insumos"
         />
       </Modal>
       <div className="crear-buscar-Pla-Pro_o_In">

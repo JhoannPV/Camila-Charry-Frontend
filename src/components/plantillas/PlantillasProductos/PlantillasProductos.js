@@ -54,6 +54,7 @@ function PlantillasProductos({ setPlanProducto }) {
         mensaje="Registrar Plantilla de Producto"
         estado={estadoModal1}
         setEstado={setEstadoModal1}
+        alingnItems="flex-start"
       >
         <FormRegistrarPlantillaPro
           estado1={estadoModal1}
@@ -64,6 +65,7 @@ function PlantillasProductos({ setPlanProducto }) {
         mensaje="Editar Plantilla"
         estado={estadoModal2}
         setEstado={setEstadoModal2}
+        alingnItems="flex-start"
       >
         <EditarPlantilla
           Pro_o_In={Pro_o_In3}
@@ -76,11 +78,13 @@ function PlantillasProductos({ setPlanProducto }) {
         mensaje="Eliminar Plantilla"
         estado={estadoModal3}
         setEstado={setEstadoModal3}
+        alingnItems="center"
       >
         <OpcionesDeletePlantilla
           Pro_o_In={Pro_o_In2}
           setEstadoModal3={setEstadoModal3}
           deletePlantilla={deletePlantilla}
+          ProIn="productos"
         />
       </Modal>
       <div className="crear-buscar-Pla-Pro_o_In">
@@ -114,7 +118,7 @@ function PlantillasProductos({ setPlanProducto }) {
                 Mostrar todas las Plantillas
               </Button>
             </div>
-            <ul className="lista-plantillas-insumos">
+            <ul className="lista-plantillas-productos">
               {plantillasProductos2.map((plantilla) => {
                 return (
                   <>
@@ -136,7 +140,7 @@ function PlantillasProductos({ setPlanProducto }) {
         </div>
       ) : (
         <div className="contenido-plaP">
-          <ul className="lista-plantillas-insumos">
+          <ul className="lista-plantillas-productos">
             {plantillasProductos.map((plantilla) => {
               return (
                 <>

@@ -1,18 +1,22 @@
-.contenido-plaI {
+.contenido-In {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.lista-plantillas-insumos {
+.lista-insumos {
   list-style-type: none;
   padding-left: 0;
   width: 55rem;
 }
-.format-plantilla {
+.format-insumo {
   margin-bottom: 3%;
   display: flex;
   flex-direction: column;
+}
+.format-insumo:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+  border-radius: 10px;
 }
 .opciones {
   transition: all 0.3s ease;
@@ -37,30 +41,42 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.format-plantilla:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
-  border-radius: 10px;
-}
 
-.nombrePlantilla {
+.nombreInsumo {
   word-break: break-word;
   max-width: 436px;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
 }
-.cantidadPlantilla {
+
+.colorIn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.cantidadInsumo {
   word-break: break-word;
   max-width: 204.17px;
   max-height: 6rem;
   overflow: auto;
 }
-.cantidadPlantilla::-webkit-scrollbar {
+.cantidadInsumo::-webkit-scrollbar {
   width: 7px;
 }
-.cantidadPlantilla::-webkit-scrollbar-thumb {
+.cantidadInsumo::-webkit-scrollbar-thumb {
   background-color: rgb(25, 110, 102);
   border-radius: 4px;
+}
+
+.precioUnitarioIn {
+  word-break: break-word;
+  max-width: 204.17px;
+  max-height: 6rem;
+  overflow: auto;
 }
 
 .visibility2 {
@@ -78,7 +94,7 @@
   align-items: center;
   font-size: 1.5rem;
 }
-.descriptionPlanIn {
+.descriptionIn {
   background-image: linear-gradient(rgb(46, 46, 46), black);
   color: rgb(212, 212, 212);
   text-align: justify;
@@ -105,10 +121,10 @@
   justify-content: flex-start;
 }
 
-.mostrarAllPlantillas {
+.mostrarAllIn {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
 }
-.mostrarAllPlantillas:hover {
+.mostrarAllIn:hover {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
 
@@ -121,7 +137,7 @@
 }
 
 @media (max-width: 570px) {
-  .format-plantilla {
+  .format-insumo {
     max-width: 20rem;
   }
   .opciones {
@@ -141,11 +157,11 @@
     justify-content: space-around;
     align-items: center;
   }
-  .descriptionPlanIn {
+  .descriptionIn {
     text-align: justify;
     width: 20rem;
   }
-  .nombrePlantilla {
+  .nombreInsumo {
     word-break: break-word;
     width: 17rem;
   }

@@ -2,8 +2,11 @@ import "./InsumoPage.css";
 import ButtonSignOut from "../../components/ButtonSignOut/ButtonSignOut";
 import Header from "../../components/header/header";
 import BackButton from "../../components/BackButton/BackButton";
+import Insumos from "../../components/productos e insumos/insumos/Insumos";
 
-function InsumoPage({ plantillaInsumo }) {
+function InsumoPage() {
+  const plantillaIn = localStorage.getItem("plantillaInsumo");
+  const plantillaInsumo = JSON.parse(plantillaIn);
   const ruta = "/gestionar-plantillas-de-insumos";
   return (
     <>
@@ -18,7 +21,9 @@ function InsumoPage({ plantillaInsumo }) {
         <div className="espaciado"></div>
       </div>
       <BackButton ruta={ruta} />
-      <div className="insumos"></div>
+      <div className="insumos">
+        <Insumos plantillaInsumo={plantillaInsumo} />
+      </div>
     </>
   );
 }

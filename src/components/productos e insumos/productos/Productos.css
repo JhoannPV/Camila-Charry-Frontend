@@ -1,24 +1,29 @@
-.contenido-plaI {
+.contenido-Pro {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.lista-plantillas-insumos {
+.lista-productos {
   list-style-type: none;
   padding-left: 0;
   width: 55rem;
 }
-.format-plantilla {
+.format-producto {
   margin-bottom: 3%;
   display: flex;
   flex-direction: column;
+}
+.format-producto:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
+  border-radius: 10px;
 }
 .opciones {
   transition: all 0.3s ease;
   width: 55rem;
   min-height: 10rem;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
   background-image: linear-gradient(turquoise, rgb(25, 110, 102));
@@ -37,28 +42,42 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.format-plantilla:hover {
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
-  border-radius: 10px;
-}
 
-.nombrePlantilla {
+.nombreProducto {
   word-break: break-word;
   max-width: 436px;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
 }
-.cantidadPlantilla {
+
+.colorPro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.cantidadProducto::-webkit-scrollbar {
+  width: 7px;
+}
+.cantidadProducto::-webkit-scrollbar-thumb {
+  background-color: rgb(25, 110, 102);
+  border-radius: 4px;
+}
+
+.precioUnitarioPro {
   word-break: break-word;
   max-width: 204.17px;
   max-height: 6rem;
   overflow: auto;
 }
-.cantidadPlantilla::-webkit-scrollbar {
+
+.precioUnitarioPro::-webkit-scrollbar {
   width: 7px;
 }
-.cantidadPlantilla::-webkit-scrollbar-thumb {
+.precioUnitarioPro::-webkit-scrollbar-thumb {
   background-color: rgb(25, 110, 102);
   border-radius: 4px;
 }
@@ -78,7 +97,7 @@
   align-items: center;
   font-size: 1.5rem;
 }
-.descriptionPlanIn {
+.descriptionPro {
   background-image: linear-gradient(rgb(46, 46, 46), black);
   color: rgb(212, 212, 212);
   text-align: justify;
@@ -103,12 +122,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  gap: 3rem;
 }
 
-.mostrarAllPlantillas {
+.mostrarAllPro {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.315);
 }
-.mostrarAllPlantillas:hover {
+.mostrarAllPro:hover {
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.603);
 }
 
@@ -121,7 +141,7 @@
 }
 
 @media (max-width: 570px) {
-  .format-plantilla {
+  .format-producto {
     max-width: 20rem;
   }
   .opciones {
@@ -141,11 +161,11 @@
     justify-content: space-around;
     align-items: center;
   }
-  .descriptionPlanIn {
+  .descriptionPro {
     text-align: justify;
     width: 20rem;
   }
-  .nombrePlantilla {
+  .nombreProducto {
     word-break: break-word;
     width: 17rem;
   }

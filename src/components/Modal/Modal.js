@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-function Modal({ mensaje, estado, setEstado, children }) {
+function Modal({ mensaje, estado, setEstado, children, alingnItems }) {
   return (
     <>
       {estado && (
-        <Overlay>
+        <Overlay alingnItems={alingnItems}>
           <ContenedorModal>
             <EncabezadoModal>
               <h3>{mensaje}</h3>
@@ -32,8 +32,18 @@ const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   display: flex;
-  align-items: center;
+  align-items: ${(props) => props.alingnItems};
   justify-content: center;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    background-color: silver;
+    border-radius: 10px;
+    width: 13px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #055;
+    border-radius: 10px;
+  }
 `;
 
 const ContenedorModal = styled.div`
